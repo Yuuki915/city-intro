@@ -1,0 +1,75 @@
+/* 
+    header 
+*/
+.header {
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 50px;
+  padding: 10px 15px;
+}
+.header .sitetitle {
+  height: 50px;
+  font-size: 40px;
+  font-weight: bolder;
+}
+.header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-weight: bold;
+  line-height: 12px;
+}
+.header nav ul li a {
+  cursor: pointer;
+  color: #cd5c5c;
+}
+.header nav ul li {
+  margin-left: 25px;
+}
+.header nav ul li a:hover {
+  border-bottom: 1.8px solid #858a8f;
+}
+
+/* 
+    footer 
+*/
+.footer .end {
+  display: flex;
+  background-color: #cd5c5c;
+  color: #fff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.footer .sitetitle {
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 10%;
+}
+.footer .endnav {
+  width: 60%;
+  margin-top: 20px;
+  margin-right: 10%;
+}
+.footer .endnav ul {
+  display: flex;
+  justify-content: right;
+  font-weight: bold;
+  line-height: 12px;
+}
+.footer .endnav ul li {
+  margin-left: 10px;
+}
+.footer a {
+  cursor: pointer;
+  color: #fff;
+}
+.footer .endnav ul li a:hover {
+  text-shadow: 1px 1px 5px #fff;
+}
