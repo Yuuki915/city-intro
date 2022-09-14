@@ -1,0 +1,29 @@
+.about {
+  background-image: url("../images/about/fukuokamap.jpeg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  background-blend-mode: lighten;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  margin: 5rem 0;
+}
+.about .exp {
+  color: #778899;
+  width: 60%;
+  padding: 0 2rem 2rem;
+}
+.about h2 {
+  font-size: 40px;
+  padding: 20px 0;
+  letter-spacing: 3px;
+  color: #778899;
+}
+.about p {
+  width: auto;
+  line-height: 30px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
