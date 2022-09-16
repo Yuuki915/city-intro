@@ -1,0 +1,81 @@
+/* ---top image slide--- */
+.album {
+  position: relative;
+}
+.album img {
+  width: 100%;
+  height: auto;
+}
+.album .img1 {
+  display: block;
+  margin: 0 auto;
+}
+.album .img2,
+.album .img3,
+.album .img4,
+.album .img5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes album {
+  0% {
+    opacity: 0;
+  }
+  6.5% {
+    opacity: 1;
+  }
+  18.5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes album {
+  0% {
+    opacity: 0;
+  }
+  6.5% {
+    opacity: 1;
+  }
+  18.5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+
+.album img {
+  animation-name: album;
+  animation-duration: 18s;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  box-shadow: 0px 0px 20px -5px #fff;
+}
+.album .img2 {
+  animation-delay: 6s;
+}
+.album .img3 {
+  animation-delay: 12s;
+}
+.album .img4 {
+  animation-delay: 18s;
+}
+
+.logo {
+  width: auto;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-45%, -50%);
+
+  text-align: center;
+  font-size: 4em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 3px 4px #778899;
+  letter-spacing: 7px;
+}
+/* ---top image slide--- */
