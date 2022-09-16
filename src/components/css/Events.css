@@ -1,0 +1,85 @@
+.events {
+  position: relative;
+  margin: 5rem 0;
+  padding: 5rem 0;
+  width: 100%;
+}
+
+.events .slider-wrapper {
+  width: 80%;
+  height: 150px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+.events .slider {
+  display: flex;
+  animation: 30s linear infinite xScroll;
+}
+.events .pics {
+  display: flex;
+  /* margin-left: 10%;
+  margin-right: 10%; */
+  width: 1300px; /* (250px + 10px) + 5 */
+}
+@keyframes xScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1300px);
+  } /* .x-scroll_block 1つ分の幅だけ動かす */
+}
+.img-div {
+  margin: 0 5px;
+}
+.events .pics img {
+  width: 250px;
+  height: 150px;
+}
+
+.events h2 {
+  font-size: 40px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  letter-spacing: 3px;
+  color: #778899;
+  width: auto;
+}
+
+.table {
+  width: 80%;
+  margin: 1rem 10%;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.table .event-list {
+  width: 100%;
+  text-align: left;
+  padding: 0 1rem;
+  display: flex;
+}
+.table .month {
+  width: 40%;
+}
+.table .event {
+  width: 60%;
+}
+.table .event-list:nth-child(odd) {
+  background: #f8f8ff;
+}
+
+@media (max-width: 780px) {
+  .event-list {
+    flex-direction: column;
+  }
+  .table .month {
+    width: auto;
+  }
+  .table .event {
+    padding: 0 1rem;
+    width: 100%;
+  }
+}
