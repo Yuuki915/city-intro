@@ -8,13 +8,13 @@ import yatai from "../images/hero/yatai-main.jpeg";
 const Hero = () => {
   return (
     <div className="hero">
-      <div class="album">
-        <img class="img1" src={itoshima} alt="" />
-        <img class="img2" src={dazaifu} alt="" />
-        <img class="img3" src={tower} alt="" />
-        <img class="img4" src={yatai} alt="" />
+      <div className="album">
+        <img className="img1" src={itoshima} alt="" />
+        <img className="img2" src={dazaifu} alt="" />
+        <img className="img3" src={tower} alt="" />
+        <img className="img4" src={yatai} alt="" />
       </div>
-      <div class="logo">FUKUOKA</div>
+      <div className="logo">FUKUOKA</div>
     </div>
   );
 };

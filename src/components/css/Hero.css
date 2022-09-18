@@ -1,7 +1,9 @@
 /* ---top image slide--- */
-.album {
+.hero {
   position: relative;
 }
+/* .album {
+} */
 .album img {
   width: 100%;
   height: auto;
@@ -67,15 +69,21 @@
 .logo {
   width: auto;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
-  transform: translate(-45%, -50%);
+  transform: translate(-50%, -50%);
 
   text-align: center;
-  font-size: 4em;
+  font-size: 5rem;
   font-weight: bold;
   color: #fff;
   text-shadow: 2px 3px 4px #778899;
   letter-spacing: 7px;
 }
 /* ---top image slide--- */
+
+@media (max-width: 780px) {
+  .logo {
+    font-size: 3rem;
+  }
+}

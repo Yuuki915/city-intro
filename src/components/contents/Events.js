@@ -32,22 +32,22 @@ const Events = () => {
       <div className="slider-wrapper">
         <div className="slider">
           <div className="pics">
-            {eventImgs.map((img) => (
-              <div className="img-div">
+            {eventImgs.map((img, key) => (
+              <div key={key} className="img-div">
                 <img src={img} alt="" />
               </div>
             ))}
           </div>
           <div className="pics">
-            {eventImgs.map((img) => (
-              <div className="img-div">
+            {eventImgs.map((img, key) => (
+              <div key={key} className="img-div">
                 <img src={img} alt="" />
               </div>
             ))}
           </div>
           <div className="pics">
-            {eventImgs.map((img) => (
-              <div className="img-div">
+            {eventImgs.map((img, key) => (
+              <div key={key} className="img-div">
                 <img src={img} alt="" />
               </div>
             ))}

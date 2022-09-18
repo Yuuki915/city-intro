@@ -1,17 +1,26 @@
 import "./App.css";
+import Header from "./components/partials/Header";
+import Footer from "./components/partials/Footer";
 import About from "./components/contents/About";
 import Food from "./components/contents/Food";
 import Hero from "./components/contents/Hero";
-import Footer from "./components/partials/Footer";
-import Header from "./components/partials/Header";
+import Visit from "./components/contents/Visit";
+import Events from "./components/contents/Events";
+import FoodPage from "./components/pages/FoodPage";
 
 const App = () => {
   return (
     <div className="App">
       <Header />
+
       <Hero />
+      <FoodPage />
+
       <About />
       <Food />
+      <Visit />
+      <Events />
+
       <Footer />
     </div>
   );
