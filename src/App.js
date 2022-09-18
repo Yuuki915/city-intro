@@ -14,7 +14,6 @@ const App = () => {
       <Header />
 
       <Hero />
-      <FoodPage />
 
       <About />
       <Food />
