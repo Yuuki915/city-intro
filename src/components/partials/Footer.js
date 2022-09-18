@@ -1,33 +1,50 @@
 import React from "react";
 import "../css/Partials.css";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <div class="end">
-        <div class="sitetitle">
-          <a href="#top">Yukipedia</a>
+      <div className="end">
+        <div className="sitetitle">
+          <p>Yukipedia</p>
         </div>
-        <nav class="endnav">
+        <nav className="endnav">
           <ul>
             <li>
-              <a href="#top">Top</a>
+              <p className="linktag" onClick={() => scroll.scrollToTop()}>
+                Top
+              </p>
             </li>
             <li>
-              <a href="#about">About</a>
+              <Link to="about" smooth={true} duration={500} className="linktag">
+                About
+              </Link>
             </li>
             <li>
-              <a href="#food">Food</a>
+              <Link to="food" smooth={true} duration={500} className="linktag">
+                Food
+              </Link>
             </li>
             <li>
-              <a href="#visit">Visit</a>
+              <Link to="visit" smooth={true} duration={500} className="linktag">
+                Visit
+              </Link>
             </li>
             <li>
-              <a href="#events">Events</a>
+              <Link
+                to="events"
+                smooth={true}
+                duration={500}
+                className="linktag"
+              >
+                Events
+              </Link>
             </li>
           </ul>
         </nav>
       </div>
+      <p className="copywrite">&copy; Yuki</p>
     </div>
   );
 };
