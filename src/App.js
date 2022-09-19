@@ -6,7 +6,6 @@ import Food from "./components/contents/Food";
 import Hero from "./components/contents/Hero";
 import Visit from "./components/contents/Visit";
 import Events from "./components/contents/Events";
-import FoodPage from "./components/pages/FoodPage";
 
 const App = () => {
   return (
@@ -14,7 +13,6 @@ const App = () => {
       <Header />
 
       <Hero />
-
       <About />
       <Food />
       <Visit />
