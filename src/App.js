@@ -1,24 +1,33 @@
 import "./App.css";
-import Header from "./components/partials/Header";
-import Footer from "./components/partials/Footer";
-import About from "./components/contents/About";
-import Food from "./components/contents/Food";
-import Hero from "./components/contents/Hero";
-import Visit from "./components/contents/Visit";
-import Events from "./components/contents/Events";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import useContentful from "./useContentful";
+
+import Home from "./Home";
+import FoodPage from "./components/pages/FoodPage";
+import { useEffect, useState } from "react";
 
 const App = () => {
+  const { getFood } = useContentful();
+  const [food, setFood] = useState([]);
+
+  useEffect(() => {
+    getFood().then((res) => setFood(res));
+  }, []);
+
   return (
     <div className="App">
-      <Header />
-
-      <Hero />
-      <About />
-      <Food />
-      <Visit />
-      <Events />
-
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {food.map((item, key) => (
+            <Route
+              key={key}
+              path={`/${item.foodTitle}`}
+              element={<FoodPage />}
+            />
+          ))}
+        </Routes>
+      </Router>
     </div>
   );
 };
