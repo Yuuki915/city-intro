@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/Food.css";
 
 import useContentful from "../../useContentful";
+import { Link } from "react-router-dom";
 
 const Food = () => {
   const { getFood } = useContentful();
@@ -21,9 +22,9 @@ const Food = () => {
         <ul>
           {food.map((item, key) => (
             <li key={key} className="box">
-              <a href="#">
+              <Link to={item.foodImg.title}>
                 <img src={item.foodImg.file.url} alt={item.foodImg.title} />
-              </a>
+              </Link>
               <p>{item.foodTitle}</p>
             </li>
           ))}

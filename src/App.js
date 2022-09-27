@@ -22,8 +22,8 @@ const App = () => {
           {food.map((item, key) => (
             <Route
               key={key}
-              path={`/${item.foodTitle}`}
-              element={<FoodPage />}
+              path={`/${item.foodImg.title}`}
+              element={<FoodPage foodItem={item} />}
             />
           ))}
         </Routes>
