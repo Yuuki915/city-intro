@@ -6,3 +6,19 @@
   top: 15rem;
   left: 0; */
 }
+
+.info-show {
+  display: block;
+}
+.no-info {
+  display: none;
+}
+.marker-info {
+  /* width: auto;
+  height: auto; */
+  font-size: 10px;
+}
+
+.gm-ui-hover-effect {
+  display: none;
+}

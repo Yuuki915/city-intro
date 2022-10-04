@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Map.css";
-import { GoogleMap, Marker } from "@react-google-maps/api";
+import { GoogleMap, InfoWindow, Marker } from "@react-google-maps/api";
 
 const mapContainerStyle = {
   width: "100%",
   height: "50%",
 };
 const center = {
-  lat: 33.596958,
-  lng: 130.408066,
+  lat: 33.587350220675916,
+  lng: 130.41468731283007,
 };
 const options = {
   disableDefaultUI: true,
@@ -16,18 +16,31 @@ const options = {
 };
 
 const Map = ({ latLng }) => {
+  const [markerInfo, setMarkerInfo] = useState("");
   console.log(latLng);
   return (
     <GoogleMap
       mapContainerStyle={mapContainerStyle}
-      zoom={10}
+      zoom={13}
       center={center}
       options={options}
       mapContainerClassName="map-container"
     >
       {latLng.map((item, key) => (
-        <Marker key={key} position={{ lat: item.lat, lng: item.lng }} />
+        <Marker
+          key={key}
+          position={{ lat: item.lat, lng: item.lng }}
+          onClick={() => setMarkerInfo(item)}
+        />
       ))}
+      {markerInfo && (
+        <InfoWindow position={{ lat: markerInfo.lat, lng: markerInfo.lng }}>
+          <>
+            <div>{markerInfo.name}</div>
+            <button onClick={() => setMarkerInfo("")}>Close</button>
+          </>
+        </InfoWindow>
+      )}
     </GoogleMap>
   );
 };

@@ -7,21 +7,32 @@ import Footer from "../partials/Footer";
 import "../css/FoodPage.css";
 
 // why making const is to avoid too many re-renders
-const libraries = ["places"];
+// const libraries = ["places"];
 
 const FoodPage = ({ foodItem }) => {
-  const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: API_KEY,
-    libraries,
+    id: process.env.GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+    // libraries,
   });
   if (!isLoaded) return <div>Loading...</div>;
 
+  const shops = foodItem.shops;
   return (
     <div className="food-page">
       <Header />
-      <div>My recomendation of {foodItem.foodTitle}</div>
+      <div>{foodItem.foodTitle}</div>
       <Map latLng={foodItem.shops} />
+
+      <div>
+        <h3>Popular in Town</h3>
+        <div>
+          {shops.map((item, key) => (
+            <p key={key}>{item.name}</p>
+          ))}
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
