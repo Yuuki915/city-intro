@@ -5,6 +5,7 @@ import useContentful from "./useContentful";
 import Home from "./Home";
 import FoodPage from "./components/pages/FoodPage";
 import { useEffect, useState } from "react";
+import ScrollTop from "./components/partials/ScrollTop";
 
 const App = () => {
   const { getFood } = useContentful();
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <div className="App">
       <Router>
+        <ScrollTop />
         <Routes>
           <Route path="/" element={<Home />} />
           {food.map((item, key) => (
