@@ -11,8 +11,8 @@ import "../css/FoodPage.css";
 
 const FoodPage = ({ foodItem }) => {
   const { isLoaded } = useLoadScript({
-    id: process.env.GOOGLE_MAPS_API_KEY,
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+    id: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     // libraries,
   });
   if (!isLoaded) return <div>Loading...</div>;
@@ -28,7 +28,10 @@ const FoodPage = ({ foodItem }) => {
         <h3>Popular in Town</h3>
         <div>
           {shops.map((item, key) => (
-            <p key={key}>{item.name}</p>
+            <div key={key}>
+              <p>{item.name}</p>
+              <p>{item.memo}</p>
+            </div>
           ))}
         </div>
       </div>
