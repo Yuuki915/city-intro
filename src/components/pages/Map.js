@@ -25,6 +25,7 @@ const Map = ({ latLng }) => {
       center={center}
       options={options}
       mapContainerClassName="map-container"
+      key={process.env.REACT_GOOGLE_MAPS_API_KEY}
     >
       {latLng.map((item, key) => (
         <Marker
