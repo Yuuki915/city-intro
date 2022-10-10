@@ -24,7 +24,7 @@
 
 .album img {
   animation-name: album;
-  animation-duration: 24s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   opacity: 0;
   box-shadow: 0px 0px 20px -5px #fff;
@@ -33,13 +33,13 @@
   animation-delay: 0s;
 }
 .album .img2 {
-  animation-delay: 6s;
+  animation-delay: 5s;
 }
 .album .img3 {
-  animation-delay: 12s;
+  animation-delay: 10s;
 }
 .album .img4 {
-  animation-delay: 18s;
+  animation-delay: 15s;
 }
 @keyframes album {
   0% {
