@@ -2,9 +2,9 @@ import React from "react";
 import "../css/Partials.css";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-const Header = () => {
+const Header = ({isVisible}) => {
   return (
-    <div className="header" id="top">
+    <div className={isVisible ? "header visivle" : "header"} id="top">
       <div className="sitetitle" onClick={() => scroll.scrollToTop()}>
         <p>Yukipedia</p>
       </div>
