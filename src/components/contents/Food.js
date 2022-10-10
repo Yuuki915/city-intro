@@ -22,9 +22,9 @@ const Food = () => {
         <ul>
           {food.map((item, key) => (
             <li key={key} className="box">
-              <Link to={item.foodImg.title}>
-                <img src={item.foodImg.file.url} alt={item.foodImg.title} />
-              </Link>
+              {/* <Link to={item.foodImg.title}> */}
+              <img src={item.foodImg.file.url} alt={item.foodImg.title} />
+              {/* </Link> */}
               <p>{item.foodTitle}</p>
             </li>
           ))}
