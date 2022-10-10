@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import useContentful from "./useContentful";
-
 import Home from "./Home";
 import FoodPage from "./components/pages/FoodPage";
 import { useEffect, useState } from "react";
