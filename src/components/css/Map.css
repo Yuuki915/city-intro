@@ -1,0 +1,17 @@
+.map-container {
+  overflow: hidden;
+}
+
+.info-show {
+  display: block;
+}
+.no-info {
+  display: none;
+}
+.marker-info {
+  font-size: 10px;
+}
+
+.gm-ui-hover-effect {
+  display: none;
+}

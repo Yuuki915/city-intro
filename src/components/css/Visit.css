@@ -1,0 +1,114 @@
+.visit {
+  width: 100%;
+  padding-top: 5rem;
+  position: relative;
+}
+.visit h2 {
+  font-size: 40px;
+  padding-bottom: 20px;
+  padding: 0 3rem;
+  letter-spacing: 3px;
+  color: #778899;
+  width: auto;
+}
+.v-bg {
+  width: 100%;
+  height: 500px;
+  background-color: #faf0e6;
+  margin-top: 5rem;
+}
+.p1-img img,
+.p2-img img {
+  width: 450px;
+  height: 300px;
+}
+.visit .v1 {
+  position: absolute;
+  top: 10rem;
+  left: 0;
+}
+.place1 {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.p-name {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 1px 2px 3px #696969;
+  width: auto;
+}
+.p-desc {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  padding: 0.5rem 1rem;
+  color: #555;
+  text-shadow: 1px 2px 3px #696969;
+}
+
+.place2 {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.visit .v2 {
+  padding-top: 7rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.visit .content {
+  width: 300px;
+}
+.visit .moji2 {
+  width: 300px;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+.visit .p3 {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #696969;
+  text-shadow: 1px 2px 3px #696969;
+}
+.img3 img {
+  box-shadow: 1px 2px 3px#696969;
+  width: 300px;
+  height: 200px;
+}
+
+.haikei2 {
+  position: absolute;
+  width: 100%;
+  height: 230px;
+  bottom: -7rem;
+  background-color: #faf0e6;
+  z-index: -1;
+}
+
+@media (max-width: 780px) {
+  .place1,
+  .place2 {
+    position: relative;
+  }
+  .p1-img,
+  .p2-img {
+    background-color: #fff;
+  }
+  .p-texts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    text-align: center;
+  }
+}
