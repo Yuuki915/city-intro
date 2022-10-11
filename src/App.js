@@ -1,11 +1,11 @@
 import "./App.css";
-import scrollreveal from "scrollreveal";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import useContentful from "./useContentful";
 import Home from "./Home";
 import FoodPage from "./components/pages/FoodPage";
 import { useEffect, useState } from "react";
 import ScrollTop from "./components/partials/ScrollTop";
+import scrollreveal from "scrollreveal";
 
 const App = () => {
   const { getFood } = useContentful();
@@ -16,46 +16,33 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const srT = scrollreveal({
-      origin: "top",
+    const sr = scrollreveal({
       distance: "50px",
       duration: 1000,
       easing: "ease-out",
       reset: true,
+      opacity: 0,
     });
-    srT.reveal(
+    sr.reveal(
       `
-      .exp, 
-      .box, 
-      .content
-    `,
+        .about .exp,
+        li,
+        .v2 .content
+      `,
       {
-        opacity: 0,
+        origin: "top",
         interval: 500,
       }
     );
 
-    const srR = scrollreveal({
+    sr.reveal(`.v1 .place1`, {
       origin: "right",
-      distance: "50px",
-      duration: 1000,
-      easing: "ease-out",
-      reset: true,
-    });
-    srR.reveal(`.place1`, {
-      opacity: 0,
       interval: 500,
     });
 
-    const srL = scrollreveal({
+    sr.reveal(`.v1 .place2`, {
       origin: "left",
-      distance: "50px",
-      duration: 1000,
-      easing: "ease-out",
-      reset: true,
-    });
-    srL.reveal(`.place2`, {
-      opacity: 0,
+      // opacity: 0,
       interval: 500,
     });
   }, []);
