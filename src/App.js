@@ -42,7 +42,6 @@ const App = () => {
 
     sr.reveal(`.v1 .place2`, {
       origin: "left",
-      // opacity: 0,
       interval: 500,
     });
   }, []);
