@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import "../css/Map.css";
-import { GoogleMap, InfoWindow, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  InfoWindow,
+  MarkerF,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 
 const mapContainerStyle = {
   width: "100%",
@@ -14,21 +19,43 @@ const options = {
   disableDefaultUI: true,
   zoomControl: true,
 };
+// const libraries = ["places"];
 
 const Map = ({ latLng }) => {
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    // libraries,
+  });
+
+  const [map, setMap] = useState(null);
   const [markerInfo, setMarkerInfo] = useState("");
+
+  const onLoad = useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds(center);
+    map.fitBounds(bounds);
+    setMap(map);
+  }, []);
+
+  const onUnmount = useCallback(function callback(map) {
+    setMap(null);
+  }, []);
+
+  if (!isLoaded) return <div>Loading...</div>;
   console.log(latLng);
+
   return (
     <GoogleMap
       mapContainerStyle={mapContainerStyle}
-      zoom={13}
       center={center}
+      zoom={13}
       options={options}
       mapContainerClassName="map-container"
-      key={process.env.REACT_GOOGLE_MAPS_API_KEY}
+      onLoad={onLoad}
+      onUnmount={onUnmount}
     >
       {latLng.map((item, key) => (
-        <Marker
+        <MarkerF
           key={key}
           position={{ lat: item.lat, lng: item.lng }}
           onClick={() => setMarkerInfo(item)}

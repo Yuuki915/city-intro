@@ -5,7 +5,7 @@ import Home from "./Home";
 import FoodPage from "./components/pages/FoodPage";
 import { useEffect, useState } from "react";
 import ScrollTop from "./components/partials/ScrollTop";
-import scrollreveal from "scrollreveal";
+// import scrollreveal from "scrollreveal";
 
 const App = () => {
   const { getFood } = useContentful();
@@ -15,36 +15,35 @@ const App = () => {
     getFood().then((res) => setFood(res));
   }, []);
 
-  useEffect(() => {
-    const sr = scrollreveal({
-      distance: "50px",
-      duration: 1000,
-      easing: "ease-out",
-      reset: true,
-      opacity: 0,
-    });
-    sr.reveal(
-      `
-        .about .exp,
-        li,
-        .v2 .content
-      `,
-      {
-        origin: "top",
-        interval: 500,
-      }
-    );
+  // useEffect(() => {
+  //   const sr = scrollreveal({
+  //     distance: "50px",
+  //     duration: 1000,
+  //     easing: "ease-out",
+  //     reset: true,
+  //   });
+  //   sr.reveal(
+  //     `
+  //       .exp,
+  //       .box,
+  //       .content
+  //       `,
+  //     {
+  //       origin: "top",
+  //       interval: 500,
+  //     }
+  //   );
 
-    sr.reveal(`.v1 .place1`, {
-      origin: "right",
-      interval: 500,
-    });
+  //   sr.reveal(`.v1 .place1`, {
+  //     origin: "right",
+  //     interval: 500,
+  //   });
 
-    sr.reveal(`.v1 .place2`, {
-      origin: "left",
-      interval: 500,
-    });
-  }, []);
+  //   sr.reveal(`.v1 .place2`, {
+  //     origin: "left",
+  //     interval: 500,
+  //   });
+  // }, []);
 
   return (
     <div className="App">
