@@ -10,3 +10,46 @@
 .food-page-main {
   margin-top: 70px;
 }
+
+.shops-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+.foodpage-h2 {
+  text-align: center;
+  margin: 1rem 0;
+}
+.shops {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.shop {
+  width: 47%;
+  height: 230px;
+  margin: 0.1rem;
+  padding: 0 1rem;
+  border: 1px solid #333;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.adds {
+  padding: 0 1rem;
+}
+.shop-name {
+  font-size: 25px;
+  font-weight: 600;
+}
+.address-en {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 670px) {
+  .shop {
+    width: 100%;
+    height: 170px;
+  }
+}
