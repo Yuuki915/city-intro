@@ -2,19 +2,20 @@ import React from "react";
 import "../css/Partials.css";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-const Header = ({isVisible}) => {
+const Header = ({ isVisible }) => {
   return (
     <div className={isVisible ? "header visivle" : "header"} id="top">
       <div className="sitetitle" onClick={() => scroll.scrollToTop()}>
         <p>Yukipedia</p>
       </div>
-      <nav>
+
+      <nav className="ham">
         <ul>
-          <li>
+          {/* <li>
             <Link to="App" smooth={true} duration={500} className="linktag">
               Top
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="about" smooth={true} duration={500} className="linktag">
               About
