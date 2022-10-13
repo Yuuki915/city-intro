@@ -8,8 +8,8 @@ import {
 } from "@react-google-maps/api";
 
 const mapContainerStyle = {
-  width: "100%",
-  height: "50%",
+  width: "100vw",
+  height: "50vh",
 };
 const center = {
   lat: 33.587350220675916,
@@ -31,28 +31,16 @@ const Map = ({ latLng }) => {
   const [map, setMap] = useState(null);
   const [markerInfo, setMarkerInfo] = useState("");
 
-  const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-    setMap(map);
-  }, []);
-
-  const onUnmount = useCallback(function callback(map) {
-    setMap(null);
-  }, []);
-
   if (!isLoaded) return <div>Loading...</div>;
-  console.log(latLng);
+  // console.log(latLng);
 
   return (
     <GoogleMap
       mapContainerStyle={mapContainerStyle}
-      center={center}
+      center={{ lat: latLng[0].lat, lng: latLng[0].lng }}
       zoom={13}
       options={options}
       mapContainerClassName="map-container"
-      onLoad={onLoad}
-      onUnmount={onUnmount}
     >
       {latLng.map((item, key) => (
         <MarkerF
