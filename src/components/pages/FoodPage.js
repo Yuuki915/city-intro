@@ -16,10 +16,14 @@ const FoodPage = ({ foodItem }) => {
     <div className="food-page">
       <Header />
       <div className="food-page-main">
-        <div className="memo">
-          <h3>Memo</h3>
-          <p>{memo}</p>
-        </div>
+        {memo === undefined ? (
+          <></>
+        ) : (
+          <div className="memo">
+            <h3>Memo</h3>
+            <p>{memo}</p>
+          </div>
+        )}
 
         <div className="title-container">
           <h1 className="food-title">{foodItem.foodTitle}</h1>
