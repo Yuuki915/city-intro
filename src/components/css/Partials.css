@@ -5,7 +5,8 @@
   width: 100vw;
   z-index: 1;
   background-color: #fff;
-  opacity: 0.7;
+  box-shadow: 0px 0px 10px #333;
+  /* opacity: 0.7; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +28,9 @@
   font-weight: bolder;
   color: #cd5c5c;
   cursor: pointer;
+}
+.header .sitetitle p {
+  color: #cd5c5c;
 }
 .linktag {
   cursor: pointer;
@@ -61,6 +65,9 @@
   font-weight: bold;
   margin-left: 10%;
 }
+.footer .sitetitle p {
+  color: #fff;
+}
 .footer .endnav {
   width: 60%;
   margin-top: 20px;
@@ -90,4 +97,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 670px) {
+  .header .ham ul {
+  }
+  .header .ham ul li {
+    margin-left: 10px;
+  }
+
+  .footer .end .sitetitle {
+    display: flex;
+    align-items: center;
+  }
+  .footer .endnav {
+    margin-top: 0;
+  }
+  .footer .endnav ul {
+    flex-direction: column;
+    text-align: right;
+  }
+  .footer .endnav ul li {
+    padding: 0.3rem 0;
+  }
 }
