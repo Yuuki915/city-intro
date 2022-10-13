@@ -8,20 +8,21 @@ import {
 } from "@react-google-maps/api";
 
 const mapContainerStyle = {
-  width: "100vw",
+  width: "90vw",
   height: "50vh",
 };
-const center = {
-  lat: 33.587350220675916,
-  lng: 130.41468731283007,
-};
+// const center = {
+//   lat: 33.587350220675916,
+//   lng: 130.41468731283007,
+// };
 const options = {
   disableDefaultUI: true,
   zoomControl: true,
 };
 // const libraries = ["places"];
 
-const Map = ({ latLng }) => {
+const Map = ({ foodItem, setClickedShop }) => {
+  const latLng = foodItem.shops;
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -30,7 +31,7 @@ const Map = ({ latLng }) => {
 
   const [map, setMap] = useState(null);
   const [markerInfo, setMarkerInfo] = useState("");
-
+  setClickedShop(markerInfo);
   if (!isLoaded) return <div>Loading...</div>;
   // console.log(latLng);
 
