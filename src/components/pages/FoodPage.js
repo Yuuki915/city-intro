@@ -7,10 +7,8 @@ import "../css/FoodPage.css";
 
 const FoodPage = ({ foodItem }) => {
   const [clickedShop, setClickedShop] = useState("");
-  console.log(clickedShop);
   const shops = foodItem.shops;
   const memo = foodItem.memo;
-  console.log(foodItem);
 
   return (
     <div className="food-page">

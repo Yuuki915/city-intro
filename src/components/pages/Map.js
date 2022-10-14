@@ -1,11 +1,13 @@
 import React, { useCallback, useState } from "react";
 import "../css/Map.css";
+import { AiFillStar } from "react-icons/ai";
 import {
   GoogleMap,
-  InfoWindow,
+  InfoWindowF,
   MarkerF,
   useJsApiLoader,
 } from "@react-google-maps/api";
+import { Stars } from "../partials/Stars";
 
 const mapContainerStyle = {
   width: "90vw",
@@ -29,17 +31,15 @@ const Map = ({ foodItem, setClickedShop }) => {
     // libraries,
   });
 
-  const [map, setMap] = useState(null);
   const [markerInfo, setMarkerInfo] = useState("");
   setClickedShop(markerInfo);
   if (!isLoaded) return <div>Loading...</div>;
-  // console.log(latLng);
-
+  console.log(markerInfo);
   return (
     <GoogleMap
       mapContainerStyle={mapContainerStyle}
       center={{ lat: latLng[0].lat, lng: latLng[0].lng }}
-      zoom={13}
+      zoom={12}
       options={options}
       mapContainerClassName="map-container"
     >
@@ -47,16 +47,30 @@ const Map = ({ foodItem, setClickedShop }) => {
         <MarkerF
           key={key}
           position={{ lat: item.lat, lng: item.lng }}
+          icon={{
+            url: `http://maps.google.com/mapfiles/ms/icons/pink-dot.png`,
+            scaledSize: new window.google.maps.Size(30, 30),
+          }}
+          animation={2}
           onClick={() => setMarkerInfo(item)}
         />
       ))}
       {markerInfo && (
-        <InfoWindow position={{ lat: markerInfo.lat, lng: markerInfo.lng }}>
-          <>
-            <div>{markerInfo.name}</div>
-            <button onClick={() => setMarkerInfo("")}>Close</button>
-          </>
-        </InfoWindow>
+        <InfoWindowF
+          position={{ lat: markerInfo.lat, lng: markerInfo.lng }}
+          onCloseClick={() => {
+            setMarkerInfo("");
+          }}
+        >
+          <div className="info-window">
+            <h3>{markerInfo.name}</h3>
+            <div className="rate">
+              <Stars rate={markerInfo.rate} />
+              <p>{markerInfo.rate}</p>
+            </div>
+            {/* <button onClick={() => setMarkerInfo("")}>Close</button> */}
+          </div>
+        </InfoWindowF>
       )}
     </GoogleMap>
   );
