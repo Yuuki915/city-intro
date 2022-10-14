@@ -15,3 +15,11 @@
 .gm-ui-hover-effect {
   display: none;
 }
+
+.info-window {
+  padding: 0.5rem;
+}
+.rate {
+  display: flex;
+  justify-content: space-evenly;
+}
