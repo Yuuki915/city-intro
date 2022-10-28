@@ -119,7 +119,30 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 530px) {
+  .header {
+    flex-direction: column;
+    transform: translateY(-95px);
+  }
+  .visivle {
+    transform: translateY(0);
+  }
+  .header nav {
+    align-items: center;
+  }
+  .header nav li {
+    margin: 0 20px;
+  }
+  .sitetitle {
+    width: 100%;
+    text-align: center;
+  }
+  .ham {
+    height: 1.5rem;
+  }
+}
+
+/* @media (max-width: 450px) {
   .header {
     flex-direction: column;
     transform: translateY(-95px);
@@ -137,4 +160,4 @@
   .ham {
     height: 1.5rem;
   }
-}
+} */
