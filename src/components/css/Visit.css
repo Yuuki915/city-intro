@@ -19,8 +19,8 @@
 }
 .p1-img img,
 .p2-img img {
-  width: 450px;
-  height: 300px;
+  max-width: 450px;
+  max-height: 300px;
 }
 .visit .v1 {
   position: absolute;
@@ -40,6 +40,10 @@
   color: #fff;
   text-shadow: 1px 2px 3px #696969;
   width: auto;
+}
+.p-texts {
+  display: flex;
+  flex-direction: column;
 }
 .p-desc {
   font-size: 1rem;
@@ -110,5 +114,20 @@
     transform: translate(-50%, -50%);
     width: auto;
     text-align: center;
+  }
+  .p-desc {
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 1px 2px 5px #000;
+  }
+}
+@media (max-width: 450px) {
+  .p1-img img,
+  .p2-img img {
+    max-width: 280px;
+    height: auto;
+  }
+  .p-name {
+    font-size: 27px;
   }
 }
