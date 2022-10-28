@@ -44,3 +44,12 @@
   margin-bottom: 5px;
   text-align: center;
 }
+
+@media (max-width: 450px) {
+  .food {
+    padding: 5rem 0;
+  }
+  .food h2 {
+    padding-left: 3rem;
+  }
+}

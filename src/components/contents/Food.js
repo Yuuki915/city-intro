@@ -15,9 +15,7 @@ const Food = () => {
   return (
     <div className="food-haikei">
       <div className="food">
-        <div>
-          <h2>Food</h2>
-        </div>
+        <h2>Food</h2>
 
         <ul>
           {food.map((item, key) => (
